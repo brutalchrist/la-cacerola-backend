@@ -14,6 +14,9 @@ export class User {
   @Prop()
   email: string;
 
+  @Prop()
+  defaultAddress: string;
+
   @Prop(raw({
     type: { type: String },
     coordinates: [Number],
