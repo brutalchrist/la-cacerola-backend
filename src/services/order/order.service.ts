@@ -8,8 +8,12 @@ import { CreateOrderDto } from './dto/create-order.dto';
 export class OrderService {
   constructor(@InjectModel(Order.name) private orderModel: Model<OrderDocument>) {}
 
-  async getAll(): Promise<Order[]>  {
-    return this.orderModel.find().exec();
+  async getAll(): Promise<Order[]> {
+    return this.orderModel.find().populate('user', 'name').exec();
+  }
+
+  async get(id: string): Promise<Order> {
+    return this.orderModel.findById(id).populate('user').populate('exercise').exec();
   }
 
   async create(createOrderDto: CreateOrderDto): Promise<Order> {
