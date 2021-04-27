@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
-import { Order } from 'src/schemas/order. schema';
+import { Order } from 'src/schemas/order.schema';
 import { CreateOrderDto } from 'src/services/order/dto/create-order.dto';
 import { OrderService } from 'src/services/order/order.service';
 
