@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  mongodb:
+    image: mongo
+    container_name: mongo_cacerola
+    environment:
+      - MONGODB_ROOT_PASSWORD=lacacerola
+      - MONGODB_USERNAME=lacacerola
+      - MONGODB_PASSWORD=lacacerola
+      - MONGODB_DATABASE=lacacerola
+    ports:
+      - 27017:27017
